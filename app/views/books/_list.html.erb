@@ -1,0 +1,22 @@
+<% books.first(1).each do |book| %>
+<h2>User Info</h2>
+      <%= image_tag book.user.get_profile_image(100,100) %>
+      <table class="table">
+      <thead>
+        <tr></tr>
+        <tr>
+          <th>name</th>
+          <th><%= book.user.name %></th>
+        </tr>
+        <tr>
+          <th >introdaction</th>
+          <th></th>
+        </tr>
+      </thead>
+      </table>
+      <div class="row">
+          <a class="btn btn-outline-secondary btn-sm  btn-block" href="/users/1/edit/"><i class="fa-solid fa-user-gear"></i></a>
+      </div>
+
+
+<% end %>

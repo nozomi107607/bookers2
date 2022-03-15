@@ -1,0 +1,24 @@
+<p></p>
+<div class="container">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <h2>User info</h2>
+        <%= form_with model: @user do |f| %>
+          <div class="form-group">
+            <label for="inputName">Name</label>
+            <input type="name" class="form-control" id="inputName">
+          </div>
+          <div class="form-group">
+            <label for="inputImage">Image</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          <div class="form-group">
+            <label for="user_introduction">Intriduction</label>
+            <textarea class="form-control" id="user_introduction" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-secondary">Update User</button>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
