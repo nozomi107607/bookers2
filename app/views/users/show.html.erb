@@ -1,14 +1,8 @@
-<% flash.each do |name, msg| %>
-      <div class="alert alert-<%= name %>">
-        <%= msg.html_safe %>
-      </div>
-<% end %>
-
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <%= render 'books/list', books: @books %>
-      <%=render 'books/list2', books: @books %>
+      <%= render 'books/list3', books: @books, user: current_user %><br>
+      <%=render 'books/list2', books: @books, user: current_user %>
     </div>
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>

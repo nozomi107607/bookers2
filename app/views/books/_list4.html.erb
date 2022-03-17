@@ -1,22 +1,22 @@
-
+<% books.first(1).each do |book| %>
   <h2>User Info</h2>
-        <%= image_tag user.get_profile_image(63,63) %>
+        <%= image_tag book.user.get_profile_image(100,100) %>
         <table class="table">
         <thead>
           <tr></tr>
           <tr>
             <th>name</th>
-            <th><%= user.name %></th>
+            <th><%= book.user.name %></th>
           </tr>
           <tr>
             <th >introdaction</th>
-            <th><%= user.introduction %></th>
+            <th><%= book.user.introduction %></th>
           </tr>
         </thead>
         </table>
         <div class="row">
-          <%= link_to(edit_user_path(user), class:"btn btn-outline-secondary btn-sm  btn-block") do %>
+          <%= link_to(edit_user_path(@users), class:"btn btn-outline-secondary btn-sm  btn-block") do %>
             <i class="fa-solid fa-user-gear"></i>
           <% end %>
         </div>
-
+<% end %>
