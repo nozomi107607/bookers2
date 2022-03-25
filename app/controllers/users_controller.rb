@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  before_action :correct_user, only: [:edit, :update]
   add_flash_types :success, :info, :warning, :danger
+
 
   def index
     @users = User.all
@@ -8,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @users = User.find(params[:id])
-    @books = Book.all
+    @books = Book.where(user_id: params[:id])
   end
 
   def edit
@@ -30,6 +32,14 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
+  end
+
+  private
+  def correct_user
+    user = User.find(params[:id])
+    if current_user != user
+      redirect_to user_session_path
+    end
   end
 
 
