@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update]
 
   root to: "homes#top"
-  get "/homes/about" => "homes#about", as: "about"
+  get "/home/about" => "homes#about", as: "about"
   patch 'books/:id' => 'books#update' , as: 'update_book'
 end

@@ -363,7 +363,7 @@ describe '[STEP3] 仕上げのテスト' do
       subject { page }
 
       before do
-        visit '/homes/about'
+        visit '/home/about'
       end
 
       it '本のアイコンが表示される' do
